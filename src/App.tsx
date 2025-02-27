@@ -436,12 +436,12 @@ function App() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-gray-800 p-6 rounded-lg border border-blue-400/20">
-              <h3 className="text-xl font-semibold mb-2">Mastercard Foundation Scholarship</h3>
+              <h3 className="text-xl font-semibold mb-2">MasterCard Foundation Scholarship</h3>
               <p className="text-gray-400">Ashesi University, 2021</p>
               <p className="text-gray-300 mt-2">Awarded for academic excellence and leadership in community development.</p>
             </div>
             <div className="bg-gray-800 p-6 rounded-lg border border-purple-400/20">
-              <h3 className="text-xl font-semibold mb-2">3rd Place Micrmouse Competition</h3>
+              <h3 className="text-xl font-semibold mb-2">3rd Place Micromouse Competition</h3>
               <p className="text-gray-400">Ashesi University, 2024</p>
               <p className="text-gray-300 mt-2">Achieved for outstanding performance in autonomous robotics and maze navigation.</p>
             </div>
