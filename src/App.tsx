@@ -177,7 +177,7 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="/images/hoyoo.jpeg"
+                src="./images/hoyoo.jpeg"
                 alt="Project 3"
                 className="w-full h-48 object-cover"
               />
@@ -198,7 +198,7 @@ function App() {
             </div>
             <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="/images/aero.png"
+                src="./images/aero.png"
                 alt="Project 1"
                 className="w-full h-48 object-cover"
               />
@@ -218,7 +218,7 @@ function App() {
             </div>
             <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="/images/filtering.jpg"
+                src="./images/filtering.jpg"
                 alt="Project 2"
                 className="w-full h-48 object-cover"
               />
@@ -240,7 +240,7 @@ function App() {
             
             <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="/images/embedd2.jpg"
+                src="./images/embedd2.jpg"
                 alt="Project 4"
                 className="w-full h-48 object-cover"
               />
@@ -263,7 +263,7 @@ function App() {
             </div>
             <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="/images/iot.jpg"
+                src="./images/iot.jpg"
                 alt="Project 5"
                 className="w-full h-48 object-cover"
               />
@@ -286,8 +286,8 @@ function App() {
             </div>
             <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="/images/stats.png"
-                // src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80"
+                src="./images/stats.png"
+                // src="https:/./images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80"
                 alt="Project 6"
                 className="w-full h-48 object-cover"
               />
@@ -471,7 +471,7 @@ function App() {
             
             <div className="bg-gray-900 p-6 rounded-lg text-center">
               <img 
-                src="/images/research.jpg"
+                src="./images/research.jpg"
                 alt="AI Research"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
@@ -481,7 +481,7 @@ function App() {
             </div>
             <div className="bg-gray-900 p-6 rounded-lg text-center">
               <img 
-                src="/images/gaming.jpg"
+                src="./images/gaming.jpg"
                 alt="Robotics"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
@@ -491,7 +491,7 @@ function App() {
             </div>
             <div className="bg-gray-900 p-6 rounded-lg text-center">
               <img 
-                src="/images/volley.jpg"
+                src="./images/volley.jpg"
                 alt="Photography"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
