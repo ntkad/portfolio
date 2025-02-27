@@ -8,7 +8,7 @@ function App() {
       <header className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0">
           <img 
-            src="/images/backblue.jpg"
+            src="./images/backblue.jpg"
             alt="Background"
             className="w-full h-full object-cover opacity-20"
           />
@@ -17,7 +17,7 @@ function App() {
           <div className="mb-8 relative">
             <div className="w-[20%] h-[20%] mx-auto relative">
               <img
-                src="/images/Nigel_Kadonzvo-4.jpg"
+                src="./images/Nigel_Kadonzvo-4.jpg"
                 alt="Profile"
                 className="w-full h-full rounded-full object-cover border-4 border-blue-400 shadow-lg shadow-blue-400/20"
               />
