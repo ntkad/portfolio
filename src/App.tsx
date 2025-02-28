@@ -1,5 +1,6 @@
 import React,{ useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, BookOpen, Briefcase, GraduationCap, ExternalLink, Code, Database, Cloud, Trophy, Users, Lightbulb, Rocket, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Mail, BookOpen, Briefcase, GraduationCap, ExternalLink, 
+  Code, Database, Cloud, Trophy, Users, Lightbulb, Rocket, Menu, X } from 'lucide-react';
 
 function App() {
 
@@ -23,15 +24,23 @@ function App() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       {/* Navigation Bar */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-900/95 shadow-lg backdrop-blur-sm py-3' : 'bg-transparent py-5'}`}>
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <div className="flex justify-between items-center">
-            <div className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-blue-500">
+          <button 
+              onClick={scrollToTop} 
+              className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-blue-500 cursor-pointer"
+            >
               Nigel Takunda Kadonzvo
-            </div>
+            </button>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
