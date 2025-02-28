@@ -1,9 +1,75 @@
-import React from 'react';
-import { Github, Linkedin, Mail, BookOpen, Briefcase, GraduationCap, ExternalLink, Code, Database, Cloud, Trophy, Users, Lightbulb, Rocket } from 'lucide-react';
+import React,{ useState, useEffect } from 'react';
+import { Github, Linkedin, Mail, BookOpen, Briefcase, GraduationCap, ExternalLink, Code, Database, Cloud, Trophy, Users, Lightbulb, Rocket, Menu, X } from 'lucide-react';
 
 function App() {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
+      {/* Navigation Bar */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-900/95 shadow-lg backdrop-blur-sm py-3' : 'bg-transparent py-5'}`}>
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
+          <div className="flex justify-between items-center">
+            <div className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+              Nigel Takunda Kadonzvo
+            </div>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-blue-400 transition-colors">About</button>
+              <button onClick={() => scrollToSection('projects')} className="text-gray-300 hover:text-blue-400 transition-colors">Projects</button>
+              <button onClick={() => scrollToSection('experience')} className="text-gray-300 hover:text-blue-400 transition-colors">Experience</button>
+              <button onClick={() => scrollToSection('leadership')} className="text-gray-300 hover:text-blue-400 transition-colors">Leadership</button>
+              <button onClick={() => scrollToSection('education')} className="text-gray-300 hover:text-blue-400 transition-colors">Education</button>
+              <button onClick={() => scrollToSection('awards')} className="text-gray-300 hover:text-blue-400 transition-colors">Awards</button>
+              <button onClick={() => scrollToSection('interests')} className="text-gray-300 hover:text-blue-400 transition-colors">Interests</button>
+            </div>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden text-gray-300 hover:text-white"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+        
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-gray-800 shadow-lg">
+            <div className="flex flex-col space-y-4 p-4">
+              <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-blue-400 transition-colors py-2">About</button>
+              <button onClick={() => scrollToSection('projects')} className="text-gray-300 hover:text-blue-400 transition-colors py-2">Projects</button>
+              <button onClick={() => scrollToSection('experience')} className="text-gray-300 hover:text-blue-400 transition-colors py-2">Experience</button>
+              <button onClick={() => scrollToSection('leadership')} className="text-gray-300 hover:text-blue-400 transition-colors py-2">Leadership</button>
+              <button onClick={() => scrollToSection('education')} className="text-gray-300 hover:text-blue-400 transition-colors py-2">Education</button>
+              <button onClick={() => scrollToSection('awards')} className="text-gray-300 hover:text-blue-400 transition-colors py-2">Awards</button>
+              <button onClick={() => scrollToSection('interests')} className="text-gray-300 hover:text-blue-400 transition-colors py-2">Interests</button>
+            </div>
+          </div>
+        )}
+      </nav>
+
       {/* Hero Section */}
       <header className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0">
@@ -151,7 +217,7 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4 md:px-8 bg-gray-800">
+      <section id="about" className="py-20 px-4 md:px-8 bg-gray-800">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
             <BookOpen className="text-blue-400" />
@@ -168,7 +234,7 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 px-4 md:px-8">
+      <section id = "projects" className="py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
             <Rocket className="text-blue-400" />
@@ -313,7 +379,7 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-20 px-4 md:px-8 bg-gray-800">
+      <section id = "experience" className="py-20 px-4 md:px-8 bg-gray-800">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
             <Briefcase className="text-blue-400" />
@@ -355,7 +421,7 @@ function App() {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-20 px-4 md:px-8">
+      <section id = "leadership" className="py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
             <Users className="text-blue-400" />
@@ -394,7 +460,7 @@ function App() {
       </section>
 
       {/* Education Section */}
-      <section className="py-20 px-4 md:px-8 bg-gray-800">
+      <section id = "education" className="py-20 px-4 md:px-8 bg-gray-800">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
             <GraduationCap className="text-blue-400" />
@@ -428,7 +494,7 @@ function App() {
       </section>
 
       {/* Awards & Scholarships Section */}
-      <section className="py-20 px-4 md:px-8">
+      <section id = "awards" className="py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
             <Trophy className="text-blue-400" />
@@ -461,7 +527,7 @@ function App() {
       </section>
 
       {/* Interests Section */}
-      <section className="py-20 px-4 md:px-8 bg-gray-800">
+      <section id = "interests" className="py-20 px-4 md:px-8 bg-gray-800">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
             <Lightbulb className="text-blue-400" />
