@@ -106,13 +106,13 @@ function App() {
             Computer Engineer | Researcher | Tech Enthusiast 
           </p>
           <div className="flex justify-center gap-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://github.com/ntkad" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
               <Github size={24} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/in/nigel-takunda-kadonzvo/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
               <Linkedin size={24} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="mailto:ntkadonzvo@gmail.com" className="text-gray-400 hover:text-white transition-colors">
               <Mail size={24} />
             </a>
           </div>
