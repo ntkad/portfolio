@@ -6,6 +6,23 @@ function App() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [hoveredAward, setHoveredAward] = useState<number | null>(null);
+
+  // Background slideshow images
+  const backgroundImages = [
+    "./images/backblue.jpg",
+    "./images/volleywin.jpg",
+    "./images/robotics2.jpg"
+  ];
+
+  // Award images
+  const awardImages = [
+    "./images/mcflogo.jpg",
+    "./images/Micromouse2.jpg",
+    "./images/mvpaward.jpg",
+    "./images/robawards.jpg"
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +31,15 @@ function App() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Slideshow effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -79,15 +105,25 @@ function App() {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <header className="relative h-screen flex items-center justify-center">
-        <div className="absolute inset-0">
-          <img 
-            src="./images/backblue.jpg"
-            alt="Background"
-            className="w-full h-full object-cover opacity-20"
-          />
-        </div>
+      {/* Hero Section with Slideshow */}
+      <header className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Slideshow background */}
+        {backgroundImages.map((image, index) => (
+          <div 
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              currentSlide === index ? 'opacity-20' : 'opacity-0'
+            }`}
+          >
+            <img 
+              src={image}
+              alt={`Background ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+
+
         <div className="relative z-10 text-center px-4">
           <div className="mb-8 relative">
             <div className="w-[20%] h-[20%] mx-auto relative">
@@ -510,26 +546,135 @@ function App() {
             Awards & Recognition
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-800 p-6 rounded-lg border border-blue-400/20">
-              <h3 className="text-xl font-semibold mb-2">MasterCard Foundation Scholarship</h3>
-              <p className="text-gray-400">Ashesi University, 2021</p>
-              <p className="text-gray-300 mt-2">Awarded for academic excellence and leadership in community development.</p>
+            {/* Award 1 */}
+            <div 
+              className="relative bg-gray-800 p-6 rounded-lg border border-blue-400/20 overflow-hidden"
+              onMouseEnter={() => setHoveredAward(0)}
+              onMouseLeave={() => setHoveredAward(null)}
+            >
+              {/* Award content */}
+              <div className="bg-gray-800 p-6 rounded-lg border border-blue-400/20">
+                <h3 className="text-xl font-semibold mb-2">MasterCard Foundation Scholarship</h3>
+                <p className="text-gray-400">Ashesi University, 2021</p>
+                <p className="text-gray-300 mt-2">Awarded for academic excellence and leadership in community development.</p>
+              </div>
+
+              {/* Award image on hover */}
+              <div 
+                className={`absolute inset-0 transition-opacity duration-300 ${
+                  hoveredAward === 0 ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img 
+                  src={awardImages[0]} 
+                  alt="Outstanding Research Award" 
+                  className="w-full h-full object-cover rounded-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-gray-900/30"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-xl font-semibold mb-1 text-white">MasterCard Foundation Scholarship</h3>
+                  <p className="text-blue-300">Ashesi University, 2021</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg border border-purple-400/20">
-              <h3 className="text-xl font-semibold mb-2">3rd Place Micromouse Competition</h3>
-              <p className="text-gray-400">Ashesi University, 2024</p>
-              <p className="text-gray-300 mt-2">Achieved for outstanding performance in autonomous robotics and maze navigation.</p>
+
+            {/* Award 2 */}
+            <div 
+              className="relative bg-gray-800 p-6 rounded-lg border border-purple-400/20 overflow-hidden"
+              onMouseEnter={() => setHoveredAward(1)}
+              onMouseLeave={() => setHoveredAward(null)}
+            >
+              {/* Award content */}
+              <div className="bg-gray-800 p-6 rounded-lg border border-purple-400/20">
+                <h3 className="text-xl font-semibold mb-2">3rd Place Micromouse Competition</h3>
+                <p className="text-gray-400">Ashesi University, 2024</p>
+                <p className="text-gray-300 mt-2">Achieved for outstanding performance in autonomous robotics and maze navigation.</p>
+              </div>
+
+              {/* Award image on hover */}
+              <div 
+                className={`absolute inset-0 transition-opacity duration-300 ${
+                  hoveredAward === 1 ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img 
+                  src={awardImages[1]} 
+                  alt="Merit Scholarship" 
+                  className="w-full h-full object-cover rounded-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-gray-900/30"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-xl font-semibold mb-1 text-white">3rd Place Micromouse Competition</h3>
+                  <p className="text-purple-300">Ashesi University, 2024</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg border border-green-400/20">
-              <h3 className="text-xl font-semibold mb-2">Most Valuable Player</h3>
-              <p className="text-gray-400">Ashesi University, 2024</p>
-              <p className="text-gray-300 mt-2">Recognized for outstanding performance, leadership, 
-                and contributions to the team as a setter.</p>
+
+            {/* Award 3 */}
+            <div 
+              className="relative bg-gray-800 p-6 rounded-lg border border-green-400/20 overflow-hidden"
+              onMouseEnter={() => setHoveredAward(2)}
+              onMouseLeave={() => setHoveredAward(null)}
+            >
+              {/* Award content */}
+
+              <div className="bg-gray-800 p-6 rounded-lg border border-green-400/20">
+                <h3 className="text-xl font-semibold mb-2">Most Valuable Player</h3>
+                <p className="text-gray-400">Ashesi University, 2024</p>
+                <p className="text-gray-300 mt-2">Recognized for outstanding performance, leadership, 
+                  and contributions to the team as a setter.</p>
+              </div>
+
+              {/* Award image on hover */}
+              <div 
+                className={`absolute inset-0 transition-opacity duration-300 ${
+                  hoveredAward === 2 ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img 
+                  src={awardImages[2]} 
+                  alt="Innovation Excellence Award" 
+                  className="w-full h-full object-cover rounded-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-gray-900/30"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-xl font-semibold mb-1 text-white">Most Valuable Player</h3>
+                  <p className="text-green-300">Ashesi University, 2024</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg border border-cyan-400/20">
-              <h3 className="text-xl font-semibold mb-2">Best Robotics Project</h3>
-              <p className="text-gray-400">Ashesi University, 2024</p>
-              <p className="text-gray-300 mt-2">Recognized for innovation, teamwork, and excellence in robotics development.</p>
+
+            {/* Award 4 */}
+            <div 
+              className="relative bg-gray-800 p-6 rounded-lg border border-cyan-400/20 overflow-hidden"
+              onMouseEnter={() => setHoveredAward(3)}
+              onMouseLeave={() => setHoveredAward(null)}
+            >
+              {/* Award content */}
+              
+              <div className="bg-gray-800 p-6 rounded-lg border border-cyan-400/20">
+                <h3 className="text-xl font-semibold mb-2">Best Robotics Project</h3>
+                <p className="text-gray-400">Ashesi University, 2024</p>
+                <p className="text-gray-300 mt-2">Recognized for innovation, teamwork, and excellence in robotics development.</p>
+              </div>
+
+              {/* Award image on hover */}
+              <div 
+                className={`absolute inset-0 transition-opacity duration-300 ${
+                  hoveredAward === 3 ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img 
+                  src={awardImages[3]} 
+                  alt="Best Paper Award" 
+                  className="w-full h-full object-cover rounded-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-gray-900/30"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-xl font-semibold mb-1 text-white">Best Robotics Project</h3>
+                  <p className="text-cyan-300">Ashesi University, 2024</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
