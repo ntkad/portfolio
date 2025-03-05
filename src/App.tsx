@@ -13,7 +13,8 @@ function App() {
   const backgroundImages = [
     "./images/backblue.jpg",
     "./images/volleywin.jpg",
-    "./images/robawards.jpg"
+    "./images/robawards.jpg",
+    "./images/ustun.jpg"
   ];
 
   // Award images
