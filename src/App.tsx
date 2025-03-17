@@ -289,7 +289,7 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="./images/hoyoo.jpeg"
+                src="./images/anomaly.jpg"
                 alt="Project 3"
                 className="w-full h-48 object-cover"
               />
@@ -375,7 +375,7 @@ function App() {
             </div>
             <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="./images/iot.jpg"
+                src="./images/mauto.jpg"
                 alt="Project 5"
                 className="w-full h-48 object-cover"
               />
