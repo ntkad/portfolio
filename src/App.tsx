@@ -408,8 +408,8 @@ function App() {
                   Absorption and Slow-Release Rate in Hydrogels for Agricultural Irrigation.</h3>
                 <p className="text-blue-400">Statistics, Ashesi University</p>
                 <p className="text-gray-400 mb-4 text-justify">I worked with a team to find better ways 
-                  to help crops stay hydrated in dry regions. We focused on hydrogels—materials 
-                  that absorb and slowly release water—to improve irrigation. By testing 
+                  to help crops stay hydrated in dry regions. We focused on hydrogels materials 
+                  that absorb and slowly release water to improve irrigation. By testing 
                   different formulas, we figured out which one held water the longest, 
                   making it more useful for farmers in areas with little rainfall. Our 
                   research aimed to support more sustainable and efficient farming.</p>
