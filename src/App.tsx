@@ -12,9 +12,14 @@ function App() {
   // Background slideshow images
   const backgroundImages = [
     "./images/backblue.jpg",
+    "./images/smarthome.jpg",
     "./images/volleywin.jpg",
+    "./images/tsana.jpg",
     "./images/robawards.jpg",
-    "./images/ustun.jpg"
+    "./images/ustun.jpg",
+    "./images/robotics2.jpg",
+    "./images/murungu.jpg",
+    "./images/embedded.jpg"
   ];
 
   // Award images
