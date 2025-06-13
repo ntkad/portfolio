@@ -301,7 +301,7 @@ function App() {
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Early Anomaly Detector in Electrical Motors.</h3>
                 <p className="text-blue-400">Final Capstone Project, Ashesi University</p>
-                <p className="text-gray-400 mb-4 text-justify">Developing an IoT-based monitoring system for rotating electrical machinery, 
+                <p className="text-gray-400 mb-4 text-justify">Developed an IoT-based monitoring system for rotating electrical machinery, 
                   integrating TinyML and thermal imaging for real-time anomaly detection and predictive maintenance. Implementing 
                   and testing machine learning algorithms to enhance detection accuracy, 
                   enabling proactive maintenance, reducing downtime, and optimizing industrial efficiency.</p>
@@ -315,7 +315,7 @@ function App() {
             </div>
             <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="./images/anomaly.jpg"
+                src="./images/mlWater2.png"
                 alt="Project 3"
                 className="w-full h-48 object-cover"
               />
@@ -323,7 +323,7 @@ function App() {
                 <h3 className="text-xl font-semibold mb-2">Water Access Analytics Project.</h3>
                 <p className="text-blue-400">Data Science, Ashesi University</p>
                 <p className="text-gray-400 mb-4 text-justify">Collaborated on a machine learning project analyzing global 
-                  water access data (2000–2020) to uncover disparities between urban and rural regions. Used K-Means clustering 
+                  water access data (2015–2020) to uncover disparities between urban and rural regions. Used K-Means clustering 
                   and PCA to group countries into access-based profiles, and trained a Random Forest model achieving 96% accuracy.
                    Developed visualizations and deployed a Streamlit app for interactive exploration and prediction.</p>
                 <div className="flex gap-2">
@@ -336,22 +336,23 @@ function App() {
             </div>
             <div className="bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
               <img 
-                src="./images/anomaly.jpg"
+                src="./images/heart.png"
                 alt="Project 3"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Early Anomaly Detector in Electrical Motors.</h3>
-                <p className="text-blue-400">Final Capstone Project, Ashesi University</p>
-                <p className="text-gray-400 mb-4 text-justify">Developing an IoT-based monitoring system for rotating electrical machinery, 
-                  integrating TinyML and thermal imaging for real-time anomaly detection and predictive maintenance. Implementing 
-                  and testing machine learning algorithms to enhance detection accuracy, 
-                  enabling proactive maintenance, reducing downtime, and optimizing industrial efficiency.</p>
+                <h3 className="text-xl font-semibold mb-2">Heart Disease Prediction Using Machine Learning</h3>
+                <p className="text-blue-400">Machine Learning Final Project, Ashesi University</p>
+                <p className="text-gray-400 mb-4 text-justify">Developed a heart disease prediction model using the 
+                  UCI dataset, applying supervised learning techniques. Performed data preprocessing (IQR-based outlier removal, 
+                  encoding, imputation) and EDA. Trained and compared Logistic Regression, Random Forest, XGBoost, 
+                  TabNet, and a custom Neural Network. Tuned hyperparameters with GridSearchCV; Random Forest achieved 
+                  84% accuracy and 90% ROC-AUC, demonstrating strong performance on structured tabular data.</p>
                 <div className="flex gap-2">
-                  <span className="px-3 py-1 bg-blue-400/20 text-blue-400 rounded-full text-sm">IoT</span>
-                  <span className="px-3 py-1 bg-purple-400/20 text-purple-400 rounded-full text-sm">ML</span>
-                  <span className="px-3 py-1 bg-green-400/20 text-green-400 rounded-full text-sm">Embedded Systems</span>
-                  <span className="px-3 py-1 bg-gray-400/20 text-gray-400 rounded-full text-sm">Motors</span>
+                  <span className="px-3 py-1 bg-blue-400/20 text-blue-400 rounded-full text-sm">Python</span>
+                  <span className="px-3 py-1 bg-purple-400/20 text-purple-400 rounded-full text-sm">ML / AI</span>
+                  <span className="px-3 py-1 bg-green-400/20 text-green-400 rounded-full text-sm">TensorFlow</span>
+                  <span className="px-3 py-1 bg-gray-400/20 text-gray-400 rounded-full text-sm">Scikit-learn</span>
                 </div>
               </div>
             </div>
