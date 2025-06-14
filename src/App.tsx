@@ -1,6 +1,11 @@
 import React,{ useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, BookOpen, Briefcase, GraduationCap, ExternalLink, 
-  Code, Database, Cloud, Trophy, Users, Lightbulb, Rocket, Menu, X } from 'lucide-react';
+  Code, Database, Cloud, Trophy, Users, Lightbulb, Rocket, Menu, X, 
+  Settings,
+  Braces,
+  Brain,
+  UserRound,
+  FlaskConical} from 'lucide-react';
 
 function App() {
 
@@ -12,14 +17,15 @@ function App() {
   // Background slideshow images
   const backgroundImages = [
     "./images/backblue.jpg",
+    "./images/ash1.jpg",
     "./images/smarthome.jpg",
     "./images/volleywin.jpg",
     "./images/tsana.jpg",
     "./images/robawards.jpg",
-    "./images/ustun.jpg",
     "./images/robotics2.jpg",
     "./images/murungu.jpg",
-    "./images/embedded.jpg"
+    "./images/embedded.jpg",
+    "./images/ASH.jpg"
   ];
 
   // Award images
@@ -134,7 +140,7 @@ function App() {
           <div className="mb-8 relative">
             <div className="w-[20%] h-[20%] mx-auto relative">
               <img
-                src="./images/Nigel_Kadonzvo-4.jpg"
+                src="./images/grad2.jpg"
                 alt="Profile"
                 className="w-full h-full rounded-full object-cover border-4 border-blue-400 shadow-lg shadow-blue-400/20"
               />
@@ -168,7 +174,7 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-800 p-8 rounded-lg transform hover:scale-105 transition-transform">
               <div className="w-16 h-16 mx-auto mb-4 bg-blue-400/10 rounded-lg flex items-center justify-center">
-                <Code size={32} className="text-blue-400" />
+                <Settings size={32} className="text-blue-400" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Engineering Software</h3>
               <ul className="text-gray-400 space-y-2">
@@ -205,7 +211,7 @@ function App() {
             
             <div className="bg-gray-800 p-8 rounded-lg transform hover:scale-105 transition-transform">
               <div className="w-16 h-16 mx-auto mb-4 bg-purple-400/10 rounded-lg flex items-center justify-center">
-                <Database size={32} className="text-purple-400" />
+                <Braces size={32} className="text-purple-400" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Programming Languages</h3>
               <ul className="text-gray-400 space-y-2">
@@ -237,7 +243,7 @@ function App() {
             </div>
             <div className="bg-gray-800 p-8 rounded-lg transform hover:scale-105 transition-transform">
               <div className="w-16 h-16 mx-auto mb-4 bg-cyan-400/10 rounded-lg flex items-center justify-center">
-                <Cloud size={32} className="text-cyan-400" />
+                <Brain size={32} className="text-cyan-400" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Soft Skills</h3>
               <ul className="text-gray-400 space-y-2">
@@ -259,7 +265,7 @@ function App() {
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-cyan-400 rounded-full mr-2"></span>
-                  Project Management
+                  Project Management" 
                 </li>
               </ul>
             </div>
@@ -271,11 +277,11 @@ function App() {
       <section id="about" className="py-20 px-4 md:px-8 bg-gray-800">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
-            <BookOpen className="text-blue-400" />
+            <UserRound className="text-blue-400" />
             About Me
           </h2>
           <p className="text-gray-300 leading-relaxed text-justify">
-          I'm a senior Computer Engineering student at Ashesi University with a deep passion for robotics, embedded systems, and high-performance computing. 
+          I'm a Computer Engineering graduate from Ashesi University with a deep passion for Artificial Intelligence, Robotics, Embedded Systems, and High-Performance Computing. 
           I’m particularly interested in applying machine learning to edge devices, optimizing efficiency for real-world problem-solving.
           I thrive on research and innovation, constantly exploring new ways to push technological boundaries. 
           Beyond academics, I’m a strong advocate for diversity and inclusion, believing that varied perspectives lead to better solutions. 
@@ -288,7 +294,7 @@ function App() {
       <section id = "projects" className="py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
-            <Rocket className="text-blue-400" />
+            <FlaskConical className="text-blue-400" />
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -760,7 +766,7 @@ function App() {
             </div>
             <div className="bg-gray-900 p-6 rounded-lg text-center">
               <img 
-                src="./images/volley.jpg"
+                src="./images/ASH.jpg"
                 alt="Photography"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
